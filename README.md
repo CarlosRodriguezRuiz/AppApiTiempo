@@ -23,3 +23,4 @@ Abre http://localhost:3000, escribe una ciudad y pulsa **Ver tiempo**.
 ## Despliegue
 
 Desplegado en Vercel (`vercel.json`). La variable `OPENWEATHER_API_KEY` se configura en el panel de Vercel (Settings → Environment Variables).
+# AppApiTiempo
