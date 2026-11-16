@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head', { title: 'Weather App' }) %>
+<body>
+  <main class="container">
+    <h1>🌤️ Weather App</h1>
+    <form action="/" method="post">
+      <input name="city" type="text" placeholder="Escribe una ciudad" value="<%= city %>" required autofocus>
+      <button type="submit">Ver tiempo</button>
+    </form>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (weather) { %>
+      <section class="card">
+        <h2><%= weather.city %></h2>
+        <img src="<%= weather.icon %>" alt="<%= weather.description %>">
+        <p class="temp"><%= weather.temp %> ºC</p>
+        <p class="desc"><%= weather.description %></p>
+        <ul>
+          <li>Sensación térmica: <%= weather.feelsLike %> ºC</li>
+          <li>Humedad: <%= weather.humidity %> %</li>
+          <li>Viento: <%= weather.wind %> km/h</li>
+        </ul>
+        <small>Datos: <%= weather.source %></small>
+      </section>
+    <% } %>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>
